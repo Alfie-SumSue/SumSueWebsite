@@ -3,11 +3,6 @@ body {
   overflow: visible;
 }
 
-/* Hide scrollbar */
-.left, .right::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari, Opera */
-}
-
 .left, .right {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
