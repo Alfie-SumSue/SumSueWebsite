@@ -5,21 +5,19 @@ body {
 h1 {
   color: blue;
 }
+
 p {
   color: red;
 }
-/* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
-  display: none;
+
+/* Hide scrollbar */
+.left, .right::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-body {
+.left, .right {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-}
-
-.left, .right
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  width: 50vw;
+  height: 100vw;
 }
