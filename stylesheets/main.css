@@ -11,17 +11,6 @@ body {
 }
 
 .left, .right {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-  width: 50vw;
-  height: 100%;
-  border: none;
-  overflow-y: scroll;
-}
-
-.right {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
   width: 50vw;
   height: 100%;
   border: none;
