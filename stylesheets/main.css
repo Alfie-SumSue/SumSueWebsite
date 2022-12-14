@@ -6,7 +6,11 @@ body {
 
 /* Division styling */
 
-.left, .right::-webkit-scrollbar {
+.left::-webkit-scrollbar {
+    display: none;
+}
+
+.right::-webkit-scrollbar {
     display: none;
 }
 
@@ -15,4 +19,6 @@ body {
   height: 100%;
   border: none;
   overflow-y: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
