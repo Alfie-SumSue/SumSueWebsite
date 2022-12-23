@@ -6,14 +6,6 @@ body {
 
 /* Division styling */
 
-.left::-webkit-scrollbar {
-    display: none;
-}
-
-.right::-webkit-scrollbar {
-    display: none;
-}
-
 .left, .right {
   width: 50vw;
   height: 100%;
@@ -22,6 +14,25 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+  background-color: #e6e6fa;
+}
+
+.left::-webkit-scrollbar {
+    display: none;
+}
+
+.right::-webkit-scrollbar {
+    display: none;
+}
+
+/* Image styling */
 
 img {
   max-width: 100%;
