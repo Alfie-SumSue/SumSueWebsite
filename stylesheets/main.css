@@ -22,3 +22,8 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.left, .right img {
+  max-width: 100%;
+  height: auto;
+}
