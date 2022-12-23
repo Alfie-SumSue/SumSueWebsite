@@ -23,7 +23,7 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 
-.left, .right img {
+img {
   max-width: 100%;
   height: auto;
 }
