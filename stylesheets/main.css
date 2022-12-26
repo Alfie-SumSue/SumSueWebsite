@@ -13,6 +13,10 @@ h1 {
 }
 
 /* Division styling */
+
+div {
+  box-sizing: border-box;
+}
     
 .flex-wrapper {
   height: 100vh;
@@ -48,4 +52,5 @@ img {
   max-width: 80%;
   height: auto;
   padding: 80px;
+  box-sizing: border-box;
 }
