@@ -52,6 +52,6 @@ div {
 img {
   max-width: 80%;
   height: auto;
-  padding: 80px;
+  padding-bottom: 60px;
   box-sizing: border-box;
 }
