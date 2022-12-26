@@ -45,7 +45,7 @@ h1 {
 /* Image styling */
 
 img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
-  padding: 80px 10%;
+  padding: 80px;
 }
