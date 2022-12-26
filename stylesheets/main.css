@@ -27,7 +27,7 @@ div {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: normal;
-  paading: 50px 20px;
+  padding: 80px 20px;
 }
 
 .left, .right {
