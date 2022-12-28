@@ -45,7 +45,13 @@ h1 {
     color: #f5f5f5;
 }
 
+-webkit-text-size-adjust: 100%;
+
 /* Division styling */
+
+::-webkit-scrollbar {
+    display: none;
+}
 
 div {
   box-sizing: border-box;
@@ -64,6 +70,7 @@ div {
 .left, .right {
   width: 50%;
   height: 100%;
+  display: flex;
   border: none;
   padding: 0px 20px;
   overflow-y: scroll;
@@ -71,12 +78,9 @@ div {
   scrollbar-width: none;  /* Firefox */
 }
 
-.left::-webkit-scrollbar {
-    display: none;
-}
-
-.right::-webkit-scrollbar {
-    display: none;
+.right {
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Image styling */
@@ -87,6 +91,6 @@ img {
   margin-right: auto;
   max-width: 80%;
   height: auto;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   box-sizing: border-box;
 }
