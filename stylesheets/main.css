@@ -84,8 +84,8 @@ div {
 
 .left {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: 10% 85%;
-  grid-template-columns: auto auto;
   gap: 5%
 }
 
