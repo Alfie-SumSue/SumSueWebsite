@@ -97,8 +97,6 @@ hr {
   border: none;
   background-color: #faf9f6;
   margin: 0 0 1px;
-  padding: 0;
-  float: left;
 }
 
 div::-webkit-scrollbar {
