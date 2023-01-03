@@ -95,8 +95,10 @@ nav {
 hr {
   height: 0.1px;
   border: none;
-  background-color: black;
+  background-color: #28282a;
   margin: 0 0 1px;
+  padding: 0;
+  float: left;
 }
 
 div::-webkit-scrollbar {
