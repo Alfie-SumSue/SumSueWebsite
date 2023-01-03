@@ -57,7 +57,7 @@ a:active {
 }
 
 body {
-  position: fixed;
+  padding: 0;
   box-sizing: border-box;
   background-color: #faf9f6;
   font-family: "Helvetica", "Arial", sans-serif;
