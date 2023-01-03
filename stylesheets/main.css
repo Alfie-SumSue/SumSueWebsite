@@ -80,6 +80,8 @@ h1 {
   color: #f5f5f5;
 }
 
+/* Division styling */
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -90,7 +92,9 @@ nav {
   flex-wrap: nowrap;
 }
 
-/* Division styling */
+.navbar-img {
+  height: 3rem;
+}
 
 hr {
   height: 0.1px;
