@@ -2,12 +2,16 @@
 
 html {
   font-size: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   html {
     font-size: 80%;
+  }
+  .right {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 
@@ -16,6 +20,9 @@ html {
   html {
     font-size: 90%;
   }
+  .right {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* Medium devices (landscape tablets, 900px and up) */
@@ -23,12 +30,18 @@ html {
   html {
     font-size: 100%;
   }
+  .right {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 /* Large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   html {
     font-size: 110%;
+  }
+  .right {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -56,40 +69,46 @@ a:active {
   text-decoration: none;
 }
 
-body {
-  margin: 0;
-  box-sizing: border-box;
-  background-color: #faf9f6;
-  font-family: "Helvetica", "Arial", sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  color: #28282a;
-  height: 100vh;
-  overflow: hidden;
-  font-size: 1rem;
-}
-
-h1 {
-  font-size: 4rem;
-  font-family: "Times New Roman", serif;
-}
-
 ::selection {
   background: #28282a;
   text-shadow: none;
   color: #f5f5f5;
 }
 
+h1 {
+  font-size: 3.5rem;
+  font-family: serif;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 0rem 0rem 0.5rem;
+}
+
 /* Division styling */
+
+body {
+  position: fixed;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #faf9f6;
+  font-family: sans-serif;
+  color: #28282a;
+  height: 100vh;
+  overflow: visible;
+  font-size: 1rem;
+}
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 4rem;
-  margin: 0rem 1rem 0.5rem;
+  padding: 0rem 1rem 0rem;
   flex-direction: row;
   flex-wrap: nowrap;
+  border-style: none;
+  border-bottom: 0.1rem solid;
 }
 
 .navbar-img {
@@ -116,7 +135,7 @@ div {
 }
 
 .flex-wrapper {
-  height: calc(100% - 4.5rem);
+  height: calc(100% - 4rem);
   margin: 0rem 1rem;
   width: calc(100vw - 3rem);
   gap: 3rem;
@@ -127,26 +146,30 @@ div {
   justify-content: normal;
 }
 
-.left,
-.right {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  line-height: 1.4rem;
-  border: none;
-  overflow-y: scroll;
+.left, .right{
+  width:50%;
 }
 
 .left {
   display: grid;
+  line-height: 1.2rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 3rem;
+  column-gap: 3rem;
+  grid-template-rows: 1fr min-content;
+  grid-row-gap: 0.5rem;
 }
 
 .right {
-  flex-direction: column;
-  padding: 1.5rem 0;
-  gap: 3rem;
+  overflow-y: scroll;
+}
+
+.project-card-grid {
+  display: grid;
+  padding: 1.5rem 0 0;
+  grid-template-columns: repeat(auto-fit, minmax(max(14rem, 100%/3), 1fr));
+  row-gap: 1.5rem;
+  height: min-content;
+  overflow-y: scroll;
 }
 
 #scroll-text {
@@ -155,58 +178,19 @@ div {
 
 /* Project card styling */
 
-.project-card::before {
-  content: "";
-  float: left;
-  padding-top: 66%;
-}
-
-.project-card::after {
-  clear: left;
-  content: "";
-  display: table;
-}
-
 .project-card {
-  background-color: white;
-  font-size: 0.75em;
-  line-height: 0.9rem;
-  display: grid;
+
+  color: #faf9f6;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  height: fit-content;
+  margin: 0rem 0.5rem 1rem;
+  padding: 0.5rem;
+  background-color: #28282a;
+  font-size: 0.8em;
   overflow: hidden;
-  padding: 5% 5%;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: 66.66% 1fr;
-  grid-row-gap: 5%;
-  grid-column-gap: 3.33%;
-  grid-template-areas:
-    "cover-img blank"
-    "cover-img  text1"
-    "cover-img  text2";
-}
-
-.pc-text-vn {
-  grid-area: text1;
-  align-self: end;
-  display: flex;
-  gap: 1rem;
-}
-
-.pc-text-en {
-  grid-area: text2;
-  display: flex;
-  gap: 1rem;
 }
 
 .pc-img {
-  grid-area: cover-img;
-  object-fit: cover;
   width: 100%;
-  max-height: 100%;
-}
-
-.dot {
-  height: 25px;
-  width: 25px;
-  background-color: #bbb;
-  border-radius: 50%;
 }
