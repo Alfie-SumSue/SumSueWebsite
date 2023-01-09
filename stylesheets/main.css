@@ -167,7 +167,6 @@ div {
   display: grid;
   padding: 1.5rem 0 0;
   grid-template-columns: repeat(auto-fit, minmax(max(14rem, 100%/3), 1fr));
-  row-gap: 1.5rem;
   height: min-content;
   overflow-y: scroll;
 }
