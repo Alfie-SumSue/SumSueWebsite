@@ -5,17 +5,6 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-
-/* Medium devices (landscape tablets, 900px and up) */
-@media only screen and (min-width: 900px) {
-  html {
-    font-size: 100%;
-  }
-  .right {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 @keyframes background-pan {
   from {
     background-position: 0% center;
@@ -198,4 +187,26 @@ div {
 
 .pc-img {
   width: 100%;
+}
+
+
+/* Phones below 600 pixels */
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+  .flex-wrapper {
+    flex-direction: column;
+  }
+  .left, .right {
+    width: 100%;
+    height: 50%;
+  }
+  .right {
+    padding: 0 0 0;
+  }
+}
+
+/* Medium devices (landscape tablets, 900px and up) */
+@media only screen and (min-width: 900px) {
+  html {
+    font-size: 100%;
+  }
 }
