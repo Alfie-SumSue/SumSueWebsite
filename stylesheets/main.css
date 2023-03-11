@@ -160,6 +160,7 @@ p {
   overflow-x: hidden;
   overflow-y: scroll;
   padding: 0 2rem 0 0;
+  margin-bottom: 1rem;
 }
 
 /* Project card styling */
