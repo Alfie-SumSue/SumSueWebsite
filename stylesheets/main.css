@@ -260,6 +260,7 @@ p {
   display: flex;
   flex-direction: row;
   height: 2rem;
+  min-height: min-content;
   justify-content: space-between;
   padding-top: 1rem;
   width: calc(100% - 2rem);
