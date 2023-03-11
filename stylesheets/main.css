@@ -259,11 +259,12 @@ p {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: row;
-  height: 2rem;
+  flex-wrap: wrap;
   min-height: min-content;
   justify-content: space-between;
   padding-top: 1rem;
   width: calc(100% - 2rem);
+  white-space: nowrap;
 }
 
 /* Phones below 600 pixels */
