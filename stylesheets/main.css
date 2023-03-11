@@ -5,6 +5,11 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+div::-webkit-scrollbar {
+  display: none;
+}
+
 @keyframes background-pan {
   from {
     background-position: 0% center;
@@ -13,6 +18,11 @@ html {
   to {
     background-position: -200% center;
   }
+}
+
+.rainbow-link > img {
+  width: 1rem;
+  vertical-align: middle;
 }
 
 a:link {
@@ -29,21 +39,6 @@ a:visited {
   text-decoration: none;
 }
 
-a:hover {
-  animation: background-pan 3s linear infinite;
-  transition: 350ms;
-  background: linear-gradient(
-    to right,
-    yellow,
-    skyblue,
-    limegreen,
-    yellow);
-  background-size: 200%;
-  text-decoration: none;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 a:active {
   color: #28282a;
   text-decoration: none;
@@ -56,7 +51,8 @@ a:active {
 }
 
 h1 {
-  font-family: serif;
+  margin: 1rem 0 0 0;
+  font-family: sans-serif;
   font-size: 2rem;
 }
 
@@ -68,49 +64,38 @@ h2 {
 /* Division styling */
 
 body {
-  background-color: #faf9f6;
   box-sizing: border-box;
   color: #28282a;
   font-family: sans-serif;
   font-size: 1rem;
   height: 100vh;
-  margin: 0;
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
+  margin: 0 1rem;
+  width: calc(100% - 2rem);
 }
 
 nav {
   align-items: center;
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.4);
-  display: grid;
-  grid: 3rem / repeat(4, 1fr);
+  display: flex;
+  padding: 0 1rem;
   justify-content: space-between;
-  padding: 0rem 0.3rem 0 0.1rem;
+  height: 3rem;
+  width: calc(100vw - 2rem);
   position: fixed;
-  box-sizing: border-box;
-  width: 100vw;
+  top: 0;
+  left: 0;
   z-index: 100;
-}
-
-hr {
-  background-color: black;
-  border: none;
-  height: 0.1px;
-  margin: 0 0 1px;
-}
-
-div::-webkit-scrollbar {
-  display: none;
 }
 
 div {
   box-sizing: border-box;
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+p {
+  margin-top: 1rem 0 0 0;
 }
 
 .flex-wrapper {
@@ -121,7 +106,7 @@ div {
   gap: 0.1rem;
   height: 100%;
   padding: 0;
-  width: calc(100% - 0.1rem);
+  width: 100%;
 }
 
 .left, .right{
@@ -136,11 +121,30 @@ div {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: 1fr min-content;
   line-height: 1.2rem;
-  margin: 0.1rem;
 }
 
 .right {
   overflow-y: scroll;
+}
+
+.rainbow-link:hover {
+  animation: background-pan 3s linear infinite;
+  transition: 350ms;
+  background: linear-gradient(
+    to right,
+    yellow,
+    skyblue,
+    limegreen,
+    yellow);
+  background-size: 200%;
+  text-decoration: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rainbow-link:hover > img {
+  filter: invert(50%) sepia(100%) hue-rotate(90deg) saturate(300%);
+  transition: 350ms;
 }
 
 .project-card-grid {
@@ -153,9 +157,9 @@ div {
 }
 
 #scroll-text {
+  overflow-x: hidden;
   overflow-y: scroll;
-  padding: 0 2rem 0 0.1rem;
-  background: white;
+  padding: 0 2rem 0 0;
 }
 
 /* Project card styling */
@@ -164,7 +168,7 @@ div {
   background: linear-gradient(
     130deg, 
     white 33%, 
-    #F7DE3A 66%
+    #f7de3a 66%
   );
   background-position: 0% 0%;
   background-size: 300% 300%;
@@ -178,17 +182,88 @@ div {
 }
 
 .project-card:hover {
-  transition-delay: 0.1s;
+  -webkit-text-fill-color: black;
   background-position: 100% 100%;
   transform: scale(1.01, 1.01);
+  transition-delay: 0.1s;
 }
-
-
 
 .pc-img {
   width: 100%;
 }
 
+/* Project pages*/
+
+.project-background {
+  animation-fill-mode: forwards;
+  animation: project-page 2s ease-in 0s 1;
+}
+
+.project-page {
+
+  height: 100vh;
+  overflow-y: scroll;
+  padding-top: 2rem;
+}
+
+.project-page > section {
+  margin: 1rem 1rem;
+  overflow: hidden;
+}
+
+.cover-img {
+  box-sizing: border-box;
+  display: flex;
+  max-height: 70vh;
+  width: 1fr;
+}
+
+.cover-img > img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  width: 100%;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.project-info > .project-title {
+  flex: 1;
+  text-align: left;
+}
+
+.project-info > .project-description {
+  flex: 1;
+  max-height: 21vh;
+  overflow-y: scroll;
+  text-align: right;
+}
+
+.gallery-wrapper {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  height: min-content;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  height: 24vw;
+  margin-bottom: 1rem;
+  overflow-x: scroll;
+}
+
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  height: 2rem;
+  justify-content: space-between;
+  padding-top: 1rem;
+  width: calc(100% - 2rem);
+}
 
 /* Phones below 600 pixels */
 @media only screen and (max-width: 600px) and (orientation: portrait) {
