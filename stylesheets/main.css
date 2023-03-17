@@ -96,7 +96,7 @@ div {
 }
 
 p {
-  margin-top: 1rem 0 0 0;
+  margin-top: 1rem;
 }
 
 .flex-wrapper {
@@ -175,7 +175,6 @@ p {
   background-position: 0% 0%;
   background-size: 300% 300%;
   color: #28282a;
-  font-size: 0.8em;
   height: fit-content;
   margin: 0.1rem;
   overflow: hidden;
@@ -184,7 +183,7 @@ p {
 }
 
 .project-card:hover {
-  -webkit-text-fill-color: black;
+  -webkit-text-fill-color: white;
   background-position: 100% 100%;
   transform: scale(1.01, 1.01);
   transition-delay: 0.1s;
@@ -216,7 +215,7 @@ p {
 .cover-img {
   box-sizing: border-box;
   display: flex;
-  max-height: 70vh;
+  max-height: 65vh;
   width: 1fr;
 }
 
@@ -228,20 +227,51 @@ p {
 
 .project-info {
   display: flex;
+  max-height: 26vh;
+  gap: 2rem;
   flex-direction: row;
 }
 
 .project-info > .project-title {
-  flex: 1;
+  flex: 2;
+  grid-template-areas: 
+  'Header Alert' 
+  'Info Alert';
   text-align: left;
 }
 
 .project-info > .project-description {
-  flex: 1;
-  max-height: 21vh;
+  flex: 3;
+  max-height: 100%;
   overflow-y: scroll;
   text-align: right;
 }
+
+.project-info > .project-title > .purchase-button {
+  background: linear-gradient(
+    130deg, 
+    white 33%, 
+    #f7de3a 66%
+  );
+  background-position: 0% 0%;
+  background-size: 300% 300%;
+  border-radius: 4px;
+  border: 3px solid #f7de3a;
+  box-sizing: border-box;
+  color: #28282a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: ease 350ms;
+  width: 8rem;
+}
+
+.project-info > .project-title > .purchase-button:hover {
+  -webkit-text-fill-color: white;
+  background-position: 100% 100%;
+  transition-delay: 0.1s;
+}
+
 
 .gallery-wrapper {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
