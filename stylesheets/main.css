@@ -227,7 +227,7 @@ p {
 
 .project-info {
   display: flex;
-  max-height: 26vh;
+  min-height: min-content;
   gap: 2rem;
   flex-direction: row;
 }
@@ -242,7 +242,7 @@ p {
 
 .project-info > .project-description {
   flex: 3;
-  max-height: 100%;
+  max-height: 26vh;
   overflow-y: scroll;
   text-align: right;
 }
